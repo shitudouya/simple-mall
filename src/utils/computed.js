@@ -47,7 +47,7 @@ function ObjectToArray(obj) {
   temp["性别"] = obj.sex === 1 ? "男" : "女";
   temp["昵称"] = obj.nickname;
   temp["手机号码"] = obj.phone;
-  temp["出生日期"] = obj.birth;
+  temp["出生日期"] = new Date(obj.birth).toLocaleDateString();
   temp["电子邮箱"] = obj.email;
   temp["收货地址"] = obj.address;
   Object.keys(temp).forEach((key) => {

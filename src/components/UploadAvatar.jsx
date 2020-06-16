@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Upload, Avatar, message } from "antd";
+const { BASE_URL } = require("../config/env");
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -44,7 +45,7 @@ export default class UploadAvatar extends Component {
         headers={{
           token: localStorage.getItem("token")
         }}
-        action="http://28l680x684.qicp.vip/user/avatar"
+        action={BASE_URL + "/user/avatar"}
         beforeUpload={this.beforeUpload}
         showUploadList={false}
         onChange={this.handleChange}
