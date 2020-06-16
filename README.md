@@ -26,3 +26,6 @@ npm start
 npm run build
 ```
 
+#### 4.Bug反馈
+
+![WeChat](https://fast.tudoublog.com/images/mmqrcode1588150621697.png)
