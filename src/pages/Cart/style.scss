@@ -1,0 +1,35 @@
+.cart-body {
+  .cart-total {
+    background: #f5f7fa;
+    margin-left: 20px;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 30px;
+    h1 {
+      font-size: 22px;
+      font-weight: bold;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #ccc;
+      color: #444;
+    }
+    button {
+      background-color: rgb(252, 117, 124);
+      height: 40px;
+      border-color: rgb(252, 117, 124);
+      color: #fff;
+    }
+    p {
+      overflow: hidden;
+      .right {
+        float: right;
+      }
+      &:last-of-type {
+        .right {
+          font-size: 24px;
+          font-weight: bold;
+          color: #f85f66;
+        }
+      }
+    }
+  }
+}

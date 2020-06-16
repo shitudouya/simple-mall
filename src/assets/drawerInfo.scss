@@ -1,0 +1,28 @@
+.drawer-content {
+  .ant-upload {
+    display: flex;
+    justify-content: center;
+  }
+  .operate {
+    margin: 20px 0;
+    text-align: center;
+    button {
+      width: 80px;
+      margin-left: 10px;
+      &:last-child {
+        &:hover {
+          border-color: #f85f66;
+          color: #f85f66;
+        }
+        &:focus {
+          border-color: #f85f66;
+          color: #f85f66;
+        }
+      }
+      &:first-child {
+        border-color: #f85f66;
+        background-color: #f85f66;
+      }
+    }
+  }
+}

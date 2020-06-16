@@ -1,0 +1,30 @@
+.site-layout-background {
+  background: #fff;
+}
+.site-layout {
+  padding: 24px 0;
+  min-height: 500px;
+}
+.site-content {
+  padding: 0 50px;
+  margin-top: 30px;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: rgb(250, 237, 238);
+  color: rgb(253, 59, 68);
+  a {
+    color: rgb(253, 59, 68);
+  }
+}
+.ant-menu-vertical .ant-menu-item::after,
+.ant-menu-vertical-left .ant-menu-item::after,
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+  border-right: 3px solid rgb(245, 81, 89);
+}
+.ant-menu-item:hover {
+  color: rgb(253, 59, 68);
+  a {
+    color: rgb(253, 59, 68);
+  }
+}

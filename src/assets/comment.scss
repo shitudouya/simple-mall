@@ -1,0 +1,12 @@
+.ant-divider-horizontal.ant-divider-with-text::before,
+.ant-divider-horizontal.ant-divider-with-text::after {
+  border-top: 1px solid #ccc;
+}
+.comment-body {
+  .ant-divider {
+    margin: 40px 0;
+  }
+  .ant-alert-with-description {
+    margin-bottom: 20px;
+  }
+}

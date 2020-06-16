@@ -1,0 +1,111 @@
+.order-container {
+  width: 100%;
+  margin: auto;
+  padding: 50px;
+  background: #fcfcfc;
+  .order-body {
+    width: 1070px;
+    margin: 0 auto;
+    .order-title {
+      color: #424242;
+      margin-bottom: 40px;
+      font-size: 26px;
+    }
+    .sendType {
+      margin: 30px 0;
+      padding: 20px 0;
+      border-top: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f0f0f0;
+      h3 {
+        font-weight: bold;
+        color: #424242;
+      }
+      svg {
+        vertical-align: middle;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    }
+    .payType {
+      margin: 30px 0;
+      padding: 20px 0;
+      border-top: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f0f0f0;
+      h3 {
+        font-weight: bold;
+        color: #424242;
+      }
+      .pay-container {
+        .ant-radio-button-wrapper {
+          
+          &:first-child {
+            background: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9fcf10ba01a57b7d08d38b6f4ff3dfa8.jpg") no-repeat;
+            width: 180px;
+            height: 60px;
+            background-size: cover;
+          }
+          &:nth-child(2) {
+            background: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c66f98cff8649bd5ba722c2e8067c6ca.jpg") no-repeat;
+            width: 180px;
+            height: 60px;
+            background-size: cover;
+          }
+          &:nth-child(3) {
+            background: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c924147efb783abb94fde84a07a5e89b.jpg") no-repeat;
+            width: 180px;
+            height: 60px;
+            background-size: cover;
+          }
+        }
+      }
+    }
+    .order-address {
+      margin: 30px 0;
+      padding: 20px 0;
+      border-top: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f0f0f0;
+      h3 {
+        font-weight: bold;
+        color: #424242;
+      }
+    }
+    .result{
+      margin: 30px 0;
+      border-bottom: 1px solid #f0f0f0;
+      .result-title{
+        font-weight: bold;
+        color: #424242;
+        font-size: 16px;
+      }  
+      span {
+        color: #F85F66;
+        margin-left: 10px;
+      }
+      span.total-money {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+    .operate {
+      button {
+        width: 160px;
+        margin-left: 10px;
+        height: 46px;
+        &:first-child {
+          &:hover {
+            border-color: #F85F66;
+            color: #F85F66;
+          }
+          &:focus {
+            border-color: #F85F66;
+            color: #F85F66;
+          }
+        } 
+        &:last-child {
+          border-color: #F85F66;
+          background-color: #F85F66;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+body {
+  min-width: 1070px;
+}
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(28, 31, 33, 0.05);
+  .header-search {
+    font-size: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 20px;
+    color: #f85f66;
+  }
+  .controls {
+    float: right;
+    button {
+      color: #f85f66;
+    }
+    .ant-dropdown-link {
+      vertical-align: middle;
+      color: salmon;
+      display: inline-block;
+      margin-left: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 120px;
+      text-align: center;
+    }
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;
+    img {
+      width: 120px;
+    }
+  }
+}
