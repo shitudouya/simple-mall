@@ -89,6 +89,24 @@ const deleteLike = async (pid) => {
 const getRecommend = async () => {
   return await axios.get("/product/recommend");
 };
+
+//沙箱支付接口
+const Pay = async (params) => {
+  return await axios.post('/order/toPay',params)
+}
+
+//获取订单信息
+const getOrder = async () => {
+  return await axios.get('/order')
+}
+//删除所有订单
+const deleteAllOrder = async() =>{
+  return await axios.delete('/order');
+}
+//根据订单号删除订单
+const deleteOrderByID = async(id) => {
+  return await axios.delete(`/order/${id}`)
+}
 export {
   getVerifyCode,
   handleRegister,
@@ -108,5 +126,9 @@ export {
   clearCart,
   addMyLike,
   deleteLike,
-  getRecommend
+  getRecommend,
+  Pay,
+  getOrder,
+  deleteAllOrder,
+  deleteOrderByID
 };

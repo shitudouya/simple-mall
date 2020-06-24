@@ -87,6 +87,30 @@ function randomTime() {
   return orderCode;
 }
 
+
+function categoryOrder(arr) {
+  if(!arr) {
+    return;
+  }
+  let allArr = [];
+  let oNumbers = [];
+  for(let i=0;i<arr.length;i++) {
+    oNumbers.push(arr[i].onumber);
+  }
+  let numberArrs = Array.from(new Set(oNumbers));
+  for(let i=0;i<numberArrs.length;i++) {
+    let temp = [numberArrs[i]];
+    for(let j=0;j<arr.length;j++) {
+      if(arr[j].onumber === temp[0]) {
+        temp.push(arr[j])
+      }
+    }
+    temp.shift();
+    allArr.push(temp)
+  }
+  return allArr;
+}
+
 function getUrlQueryObj(url) {
   if (!url) return;
   var obj = {};
@@ -100,4 +124,4 @@ function getUrlQueryObj(url) {
   return obj;
 }
 
-export { computedMoney, deepClone, computedCount, randomTime, ObjectToArray, getUrlQueryObj };
+export { computedMoney, deepClone, computedCount, randomTime, ObjectToArray, getUrlQueryObj,categoryOrder };

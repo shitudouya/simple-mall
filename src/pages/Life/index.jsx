@@ -19,7 +19,7 @@ export default class index extends Component {
     getProduct({ cid: 4, pageNum: this.state.currentPage, pageSize: 12 })
       .then((res) => {
         this.setState({
-          productList: res.data
+          productList: !res.data?[]:res.data
         });
       })
       .catch((err) => {});

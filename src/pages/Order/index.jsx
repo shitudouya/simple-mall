@@ -4,7 +4,7 @@ import QueueAnim from "rc-queue-anim";
 import { Table, Row, Col, Button, Radio, message } from "antd";
 import ExpressIcon from "../../components/ExpressIcon";
 import ChangeAddress from "../../components/ChangeAddress";
-import { getCart, clearCart } from "../../api";
+import { getCart, Pay } from "../../api";
 import { computedMoney } from "../../utils/computed";
 import { connect } from "react-redux";
 import { DeleteAllCart_Action } from "../../store/actions";
@@ -12,7 +12,8 @@ import { DeleteAllCart_Action } from "../../store/actions";
 class index extends Component {
   state = {
     data: [],
-    newAddress:'暂未设置收货地址',
+    newAddress: "暂未设置收货地址",
+    payFormStr: "",
     columns: [
       {
         title: "图片",
@@ -57,16 +58,31 @@ class index extends Component {
     });
   };
   handleOK = () => {
-    clearCart().then(res=>{
-      if(res.code === 200) {
-        message.success("订单提交成功！");
-        this.props.history.push("/checkout/result");
-        this.props.clear_cart()
-      } else {
-        message.error("订单异常！请稍后再试")
-      }
-    })
+    message.loading("订单提交中...");
+    Pay(this.state.data).then((res) => {
+        this.setState(
+          {
+            payFormStr: res
+          },
+          () => {
+            document.forms[0].submit();
+            
+          }
+        )
+    });
+    // clearCart().then(res=>{
+    //   if(res.code === 200) {
+
+    //     // this.props.history.push("/checkout/result");
+    //     // this.props.clear_cart()
+    //   } else {
+    //     message.error("订单异常！请稍后再试")
+    //   }
+    // })
   };
+  componentWillUnmount() {
+    message.destroy();
+  }
   componentDidMount() {
     getCart().then((res) => {
       this.setState({
@@ -75,19 +91,20 @@ class index extends Component {
     });
   }
   handleAddress = (value) => {
-    const address = `${value.person} ${value.phone} ${value.address}`
+    const address = `${value.person} ${value.phone} ${value.address}`;
     this.setState({
-      newAddress:address
-    })
-  }
+      newAddress: address
+    });
+  };
   render() {
-    const { data, columns, expressName, showAddressModal,newAddress } = this.state;
+    const { data, columns, expressName, showAddressModal, newAddress, payFormStr } = this.state;
     const { address } = this.props.user_info;
     const isExist = data && data.length > 0 && localStorage.getItem("token");
     return !isExist ? (
       <p></p>
     ) : (
       <div className="order-container">
+        <div dangerouslySetInnerHTML={{ __html: payFormStr }}></div>
         <div className="order-body">
           <QueueAnim type="top" delay={300} duration={800}>
             <h1 key="1" className="order-title">
@@ -119,7 +136,11 @@ class index extends Component {
                       <Button type="link" onClick={this.SetShowAddress}>
                         点击修改
                       </Button>
-                      <ChangeAddress visible={showAddressModal} sendAddress={this.handleAddress} handleCancel={this.SetShowAddress} />
+                      <ChangeAddress
+                        visible={showAddressModal}
+                        sendAddress={this.handleAddress}
+                        handleCancel={this.SetShowAddress}
+                      />
                     </>
                   ) : (
                     address

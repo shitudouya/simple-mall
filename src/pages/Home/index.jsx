@@ -19,12 +19,13 @@ export default class index extends Component {
   componentDidMount() {
     getRecommend().then((res) => {
       this.setState({
-        dataList: res.data
+        dataList: !res.data?[]:res.data
       });
     });
   }
   render() {
     const { dataList } = this.state;
+
     return (
       <div className="home-container">
         <QueueAnim duration={1200} type="right">

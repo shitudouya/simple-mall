@@ -8,7 +8,7 @@ import "../assets/body.scss";
 const { Content, Footer, Sider } = Layout;
 
 const IconFont = createFromIconfontCN({
-  scriptUrl: "//at.alicdn.com/t/font_1872233_0re6abx8pvuj.js"
+  scriptUrl: "//at.alicdn.com/t/font_1872233_ecgpvyn3g4f.js"
 });
 export default class CommonBody extends Component {
   componentDidMount() {
@@ -49,6 +49,10 @@ export default class CommonBody extends Component {
                 <Menu.Item key="/pocket">
                   <IconFont type="icon-shoucang" />
                   <Link to="/pocket">我的收藏</Link>
+                </Menu.Item>
+                <Menu.Item key="/order">
+                  <IconFont type="icon-dingdan" />
+                  <Link to="/order">我的订单</Link>
                 </Menu.Item>
                 <Menu.Item key="/history">
                   <IconFont type="icon-liulanjilu" />

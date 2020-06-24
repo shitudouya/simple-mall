@@ -10,10 +10,11 @@ const Mobile = loadable(() => import("../pages/Mobile/index"));
 const Cart = loadable(() => import("../pages/Cart/index"));
 const Detail = loadable(() => import("../pages/Detail/index"));
 const NotFound = loadable(() => import("../pages/NotFound/index"));
-const History = loadable(()=>import("../pages/History/index"))
-const Order = loadable(()=>import ("../pages/Order/index"))
-const Result = loadable(()=>import ("../pages/Result/index"))
-const Search = loadable(()=>import('../pages/Search/index'))
+const History = loadable(() => import("../pages/History/index"));
+const Order = loadable(() => import("../pages/Order/index"));
+const Result = loadable(() => import("../pages/Result/index"));
+const Search = loadable(() => import("../pages/Search/index"));
+const AllOrder = loadable(() => import("../pages/AllOrder/index"));
 class Routes extends Component {
   render() {
     return (
@@ -39,6 +40,7 @@ class Child extends Component {
         <Route exact path="/pocket" component={Pocket}></Route>
         <Route exact path="/cart" component={Cart}></Route>
         <Route exact path="/history" component={History}></Route>
+        <Route exact path="/order" component={AllOrder}></Route>
         <Route component={NotFound} />
       </Switch>
     );
