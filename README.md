@@ -4,9 +4,9 @@
 
 线上地址：[http://mall.tudoublog.com](http://mall.tudoublog.com)
 
-主要技术栈：`React + Redux + Ant Design + Sass`
+主要技术栈：`React + Redux + Ant Design + Axios + Sass`
 
-（注意：此仓库不包含后端代码）
+后端代码地址：[https://gitee.com/sexylalal/mx_project](https://gitee.com/sexylalal/mx_project)
 
 #### 1.安装
 
